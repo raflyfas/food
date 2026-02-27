@@ -10,7 +10,7 @@ import { Upload, Image as ImageIcon, Wand2, Loader2, Sparkles } from 'lucide-rea
 
 // Initialize Gemini
 const ai = new GoogleGenerativeAI({
-  apiKey: import.meta.env.GEMINI_API_KEY
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY
 });
 
 const fileToBase64 = (file: File): Promise<string> => {
