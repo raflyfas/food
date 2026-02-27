@@ -4,14 +4,14 @@
  */
 
 import { useState } from 'react';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 import { motion, AnimatePresence } from 'motion/react';
 import { Upload, Image as ImageIcon, Wand2, Loader2, Sparkles } from 'lucide-react';
 
 // Initialize Gemini
-const ai = new GoogleGenerativeAI(
-  import.meta.env.VITE_GEMINI_API_KEY as string
-);
+const ai = new GoogleGenAI({
+  apiKey: import.meta.env.VITE_GEMINI_API_KEY as string
+});
 
 const fileToBase64 = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
